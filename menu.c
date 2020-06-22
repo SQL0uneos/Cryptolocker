@@ -22,9 +22,7 @@ void menu()
         }
         else if (choix == 2)
         {
-            printf("Crypter une simple chaine... \n");
-            printf("Quel algorithme voulez-vous utiliser ? \n");
-            printf("1 - Cryptage BIT\n2 - Cryptage XOR\n3 - Cryptage DECALAGE \n");
+            CryptageC();
         }
         else if (choix == 3)
         {
@@ -81,4 +79,38 @@ void CryptageF()
             printf("Nique ta mère");
         }
     }
+}
+
+
+void CryptageC()
+{
+    int menu = 1;
+    int choix;
+
+    while(menu == 1)
+    {
+
+        printf("Crypter une simple chaine... \n");
+        printf("Quel algorithme voulez-vous utiliser ? \n");
+        printf("1 - Cryptage BIT\n2 - Cryptage XOR\n3 - Cryptage DECALAGE \n");
+
+        scanf("%d", &choix);
+        if(choix == 1)
+        {
+            printf("1");
+        }
+        else if (choix == 2)
+        {
+            printf("2");
+        }
+        else if(choix == 3)
+        {
+            printf("3");
+        }
+        else
+        {
+            printf("Nique ta mère");
+        }
+    }
+
 }
