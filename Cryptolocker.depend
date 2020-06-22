@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1592851720 source:c:\users\lamma\documents\cryptolocker\cryptolocker\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1592851720 c:\users\lamma\documents\cryptolocker\cryptolocker\menu.h
+
