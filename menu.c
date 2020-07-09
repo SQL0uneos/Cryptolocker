@@ -11,7 +11,7 @@ void menu()
     // Première boucle
     while(menu == 1)
     {
-        printf("Bienvenue sur le programme Cryptolocker \n");
+        printf("Bienvenue sur le programme Cryptolocker 1997 \n");
         printf("Que voulez vous faire ? \n");
         printf("1 - Crypter un fichier \n2 - Crypter une chaine de caractere \n3 - Decrypter un fichier \n4 - Decrypter une chaine de caractere \n5 - Quitter \n");
 
