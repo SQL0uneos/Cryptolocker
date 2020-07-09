@@ -6,3 +6,22 @@
 
 1592851720 c:\users\lamma\documents\cryptolocker\cryptolocker\menu.h
 
+1592851720 source:c:\users\lamma\documents\github\cryptolocker\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1592851720 c:\users\lamma\documents\github\cryptolocker\menu.h
+
+1594322267 source:c:\users\lamma\documents\github\cryptolocker\menu.c
+	"menu.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1594322298 source:c:\users\lamma\documents\github\cryptolocker\cryptchaine.c
+	"menu.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+

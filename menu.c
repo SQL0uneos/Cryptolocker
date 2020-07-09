@@ -1,6 +1,8 @@
 #include "menu.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 void menu()
 {
@@ -90,22 +92,35 @@ void CryptageC()
     while(menu == 1)
     {
 
-        printf("Crypter une simple chaine... \n");
+        printf("Crypter une  chaine... \n");
         printf("Quel algorithme voulez-vous utiliser ? \n");
-        printf("1 - Cryptage BIT\n2 - Cryptage XOR\n3 - Cryptage DECALAGE \n");
+        printf("1 - Cryptage simple inversion\n2 - Cryptage CESAR\n3 - Cryptage DECALAGE \n");
 
         scanf("%d", &choix);
         if(choix == 1)
         {
-            printf("1");
+            printf("Cryptage par inversion de chaine, veuiller entrer une chaine : \n");
+
+
+            cryptageChaineInv();
+
         }
         else if (choix == 2)
         {
-            printf("2");
+            char str[10];
+            char stp[] = "AZERTY";
+            int numcesar;
+
+            printf("Veuiller inserer une chaine a crypter en cesar: \n");
+            scanf("%s", &str);
+
+            cryptageCesar(stp, 10);
+
+
         }
         else if(choix == 3)
         {
-            printf("3");
+            printf("Env de test");
         }
         else
         {
