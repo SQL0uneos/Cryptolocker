@@ -1,52 +1,66 @@
 #include "menu.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-
-void menu()
+void principal()
 {
-    // Déclaration des booléans
-    int menu = 1;
-    int choix = 0;
 
-    // Première boucle
-    while(menu == 1)
-    {
-        printf("Bienvenue sur le programme Cryptolocker 1997 \n");
+    int princi;
+    if(princi=!0){
+    // Déclaration des booléans
+    princi = 1;
+    int choix=0;
+
+        printf("Bienvenue sur le programme Cryptolocker 1\n");
         printf("Que voulez vous faire ? \n");
         printf("1 - Crypter un fichier \n2 - Crypter une chaine de caractere \n3 - Decrypter un fichier \n4 - Decrypter une chaine de caractere \n5 - Quitter \n");
 
         scanf("%d", &choix);
-        if(choix == 1)
+    // Première boucle
+        while(princi == 1)
         {
-            CryptageF();
+
+            if(choix == 1 )
+            {
+                CryptageF();
+                break;
+            }
+            else if (choix == 2)
+            {
+                CryptageC();
+                 break;
+            }
+            else if (choix == 3)
+            {
+                printf("Decryptage de fichier... \n");
+                printf("Quel algorithme voulez-vous utiliser ? \n");
+                printf("1 - Decryptage HTTPS\n2 - Decryptage XOR\n3 - Decryptage CESAR \n");
+
+                 break;
+            }
+            else if (choix == 4)
+            {
+                printf("Decryptage de chaine de caractère... \n");
+                printf("Quel algorithme voulez-vous utiliser ? \n");
+                printf("1 - Decryptage BIT\n2 - Decryptage XOR\n3 - Decryptage DECALAGE \n");
+                 break;
+            }
+            else if (choix == 5)
+            {
+                printf("Merci a bientot \n");
+                princi=0;
+
+            }
+            else
+            {
+                printf("Veuiller entrer un menu valide connard \n");
+                break;
+            }
         }
-        else if (choix == 2)
-        {
-            CryptageC();
-        }
-        else if (choix == 3)
-        {
-            printf("Decryptage de fichier... \n");
-            printf("Quel algorithme voulez-vous utiliser ? \n");
-            printf("1 - Decryptage HTTPS\n2 - Decryptage XOR\n3 - Decryptage CESAR \n");
-        }
-        else if (choix == 4)
-        {
-            printf("Decryptage de chaine de caractère... \n");
-            printf("Quel algorithme voulez-vous utiliser ? \n");
-            printf("1 - Decryptage BIT\n2 - Decryptage XOR\n3 - Decryptage DECALAGE \n");
-        }
-        else if (choix == 5)
-        {
-            printf("Merci, à bientôt \n");
-            menu == 0;
-        }
-        else
-        {
-            printf("Veuiller entrer un menu valide connard \n");
-        }
+    }
+    else
+    {
+        printf("fin du programme \n");
     }
 }
 
@@ -61,20 +75,25 @@ void CryptageF()
     {
         printf("Cryptage de fichier... \n");
         printf("Quel algorithme voulez-vous utiliser ? \n");
-        printf("1 - Cryptage HTTPS\n2 - Cryptage XOR\n3 - Cryptage CESAR \n");
+        printf("1 - Cryptage HTTPS\n2 - Cryptage XOR\n3 - Cryptage CESAR\n4 - precedent\n");
 
         scanf("%d", &choix);
         if(choix == 1)
         {
-            printf("1");
+            printf("test1");
         }
         else if (choix == 2)
         {
-            printf("2");
+            printf("test2");
         }
         else if(choix == 3)
         {
-            printf("3");
+            printf("test3");
+        }
+        else if(choix == 4)
+        {
+            return principal();
+
         }
         else
         {
@@ -82,8 +101,6 @@ void CryptageF()
         }
     }
 }
-
-
 void CryptageC()
 {
     int menu = 1;
@@ -108,15 +125,19 @@ void CryptageC()
         else if (choix == 2)
         {
             char str[10];
-            char stp[] = "AZERTY";
+            //char stp[] = "AZERTY";
             int numcesar;
+            printf("Veuiller  entrer le decalage souhaite: \n");
+
+            scanf("%d", &numcesar);
+
 
             printf("Veuiller inserer une chaine a crypter en cesar: \n");
             scanf("%s", &str);
 
-            cryptageCesar(stp, 10);
+            cryptageCesar(str,numcesar);
 
-
+            break;
         }
         else if(choix == 3)
         {
@@ -129,3 +150,5 @@ void CryptageC()
     }
 
 }
+
+

@@ -23,81 +23,58 @@ void cryptageChaineInv()
 
 void cryptageCesar(char str[], int shift)
 {
-  int i = 0;
-  while (str[i] != '\0')
-  {
-    if (str[i] >= 'A' && str[i]<= 'Z')
-    {
-        char c = str[i] - 'A';
-        c += shift;
-        c = c % 26;
-        str[i] = c + 'A';
-    }
-    i++;
-  }
 
-  printf("%s", str);
+  int i =0;
+  int j=shift;
+
+  for(i;i<strlen(str);i++)
+    {
+
+      if(str[i] >= 97 &&  str[i] <= 122 || str[i] >=65 && str[i] <=90)
+       {
+           if (j>0)
+            {
+              if(str[i]+shift>122&&str[i]+shift>=97)
+              {
+                      str[i]+=j-26;
+              }
+              else if(str[i]+shift>=65&&str[i]+shift<=90)
+                      {
+                           str[i]+=j;
+                      }
+                      else
+                       {
+                           str[i]+=j;
+                       }
+            }
+
+        else
+            {
+              if(str[i]+shift<=122&&str[i]+shift>=97)
+              {
+                      str[i]+=j;
+              }
+              else if(str[i]+shift>=65&&str[i]+shift<=90)
+                      {
+                      str[i]+=j+26;
+                      }
+                       else
+                       {
+                           str[i]+=j+26;
+                       }
+
+            }
+       }
+
+    }
+    printf("chain: %s\n",str);
 
 }
+
+
+
 
 
 
 // Fonction CESAR 2
-
-void alphaRotate(char* str, int n){
-
-
-// Parcourir le tableau
-
-int i = 0;
-int j = 0;
-int k = 0;
-
-for (i = 0; i < strlen(str); i++)
-{
-
-  if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
-  {
-
-    if(n > 0)
-    {
-        for(j = 0; j < n; j++)
-        {
-
-            str[i]++;
-            if(str[i] == 'z' + 1)
-            {
-                str[i] = 'a';
-            }
-            if(str[​‍﻿​​​﻿‌﻿i] == 'Z' + 1)
-            {
-                str[i] = 'A';
-            }
-        }
-    }
-
-    else if (n < 0)
-    {
-        for(k = n; k < 0; k++)
-        {
-            str[i]--;
-            if(str[i] == 'a' - 1)
-            {
-                str[i] = 'z';
-            }
-            if(str[i] == 'A' - 1)
-            {
-                str[i] = 'Z';
-            }
-        }
-    }
-
-  }
-
-}
-
-}
-
-
-
 
