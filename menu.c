@@ -9,16 +9,16 @@ void principal()
     if(princi=!0){
     // Déclaration des booléans
     princi = 1;
-    int choix=0;
+    int choix;
 
-        printf("Bienvenue sur le programme Cryptolocker 1\n");
-        printf("Que voulez vous faire ? \n");
-        printf("1 - Crypter un fichier \n2 - Crypter une chaine de caractere \n3 - Decrypter un fichier \n4 - Decrypter une chaine de caractere \n5 - Quitter \n");
-
-        scanf("%d", &choix);
     // Première boucle
         while(princi == 1)
         {
+            choix=0;
+            printf("Bienvenue sur le programme Cryptolocker 1\n");
+            printf("Que voulez vous faire ? \n");
+            printf("1 - Crypter un fichier \n2 - Crypter une chaine de caractere \n3 - Decrypter un fichier \n4 - Decrypter une chaine de caractere \n5 - Quitter \n");
+            scanf("%d", &choix);
 
             if(choix == 1 )
             {
@@ -54,7 +54,6 @@ void principal()
             else
             {
                 printf("Veuiller entrer un menu valide connard \n");
-                break;
             }
         }
     }
