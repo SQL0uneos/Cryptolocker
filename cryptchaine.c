@@ -29,7 +29,8 @@ void cryptageCesar(char str[], int shift)
 
   for(i;i<strlen(str);i++)
     {
-if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z'){
+if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
+    {
 
     if(shift > 0)
     {
@@ -66,18 +67,62 @@ if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z'){
   }
 
 
+    }
+
+printf("la chaine est:%s",str);
+
+
+
 }
 
 
 
+void vigenere(){
 
+    char msg[30];
+    char key[30];
+    printf("veuillez rentrer votre message!: \n");
+    getchar();
+    fgets(msg,sizeof(msg),stdin);
+    printf("veuillez saisir votre cle!: \n");
+    scanf("%s",key);
 
-        //printf("chain: %s\n",str);
-      printf("la chaine est:%s",str);
+    int msgLen = strlen(msg), keyLen = strlen(key), i, j;
 
+    char newKey[msgLen], encryptedMsg[msgLen], decryptedMsg[msgLen];
 
+    //generation nouvelle cle
+    for(i = 0, j = 0; i < msgLen-1; ++i, ++j){
+        if(j == keyLen)
+            j = 0;
 
+        newKey[i] = key[j];
     }
+
+    newKey[i] = '\0';
+
+    //cryptation
+    for(i = 0; i < msgLen-1; ++i)
+        encryptedMsg[i] = ((msg[i] + newKey[i]) % 26) + 'A';
+
+    encryptedMsg[i] = '\0';
+
+    //decryptation
+    for(i = 0; i < msgLen-1; ++i)
+        decryptedMsg[i] = (((encryptedMsg[i] - newKey[i]) + 26) % 26) + 'A';
+
+    decryptedMsg[i] = '\0';
+
+    printf("Le Message est: %s", msg);
+    printf("\n Cle: %s", key);
+    printf("\n Generation de la nouvelle cle: %s", newKey);
+    printf("\n Message crypté: %s", encryptedMsg);
+    printf("\n Decrypte le message: %s\n", decryptedMsg);
+
+
+
+
+}
 
 
 

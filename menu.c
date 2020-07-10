@@ -133,7 +133,7 @@ void CryptageC()
 
 
             printf("Veuiller inserer une chaine a crypter en cesar: ");
-            //scanf("%s", &str);
+
             getchar();
             fgets(str,20,stdin);
 
@@ -144,10 +144,10 @@ void CryptageC()
             break;
         }
         else if(choix == 3)
+
         {
-            char ok[20];
-            fgets(ok,20,stdin);
-            printf("la chaine:%s",ok);
+           vigenere();
+
         }
         else
         {
