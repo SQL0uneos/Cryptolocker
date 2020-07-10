@@ -123,16 +123,21 @@ void CryptageC()
         }
         else if (choix == 2)
         {
-            char str[10];
+            char str[20];
             //char stp[] = "AZERTY";
             int numcesar;
+
             printf("Veuiller  entrer le decalage souhaite: \n");
 
             scanf("%d", &numcesar);
 
 
-            printf("Veuiller inserer une chaine a crypter en cesar: \n");
-            scanf("%s", &str);
+            printf("Veuiller inserer une chaine a crypter en cesar: ");
+            //scanf("%s", &str);
+            getchar();
+            fgets(str,20,stdin);
+
+
 
             cryptageCesar(str,numcesar);
 
@@ -140,7 +145,9 @@ void CryptageC()
         }
         else if(choix == 3)
         {
-            printf("Env de test");
+            char ok[20];
+            fgets(ok,20,stdin);
+            printf("la chaine:%s",ok);
         }
         else
         {

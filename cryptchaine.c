@@ -29,47 +29,58 @@ void cryptageCesar(char str[], int shift)
 
   for(i;i<strlen(str);i++)
     {
+if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z'){
 
-      if(str[i] >= 97 &&  str[i] <= 122 || str[i] >=65 && str[i] <=90)
-       {
-           if (j>0)
+    if(shift > 0)
+    {
+        for(j = 0; j < shift; j++)
+        {
+            str[i]++;
+            if(str[i] == 'z' + 1)
             {
-              if(str[i]+shift>122&&str[i]+shift>=97)
-              {
-                      str[i]+=j-26;
-              }
-              else if(str[i]+shift>=65&&str[i]+shift<=90)
-                      {
-                           str[i]+=j;
-                      }
-                      else
-                       {
-                           str[i]+=j;
-                       }
+                str[i] = 'a';
             }
-
-        else
+            if(str[i] == 'Z' +1)
             {
-              if(str[i]+shift<=122&&str[i]+shift>=97)
-              {
-                      str[i]+=j;
-              }
-              else if(str[i]+shift>=65&&str[i]+shift<=90)
-                      {
-                      str[i]+=j+26;
-                      }
-                       else
-                       {
-                           str[i]+=j+26;
-                       }
-
+                str[i] = 'A';
             }
-       }
-
+        }
     }
-    printf("chain: %s\n",str);
+
+    else if (shift < 0)
+    {
+        for(int k = shift; k < 0; k++)
+        {
+            str[i]--;
+            if(str[i] == 'a' - 1)
+            {
+                str[i] = 'z';
+            }
+            if(str[i] == 'A' - 1)
+            {
+                str[i] = 'Z';
+            }
+        }
+    }
+
+  }
+
 
 }
+
+
+
+
+
+        //printf("chain: %s\n",str);
+      printf("la chaine est:%s",str);
+
+
+
+    }
+
+
+
 
 
 

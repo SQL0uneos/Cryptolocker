@@ -32,12 +32,12 @@
 
 1594311209 c:\users\hajjaji\documents\github\cryptolocker\menu.h
 
-1594324211 source:c:\users\hajjaji\documents\github\cryptolocker\menu.c
+1594390115 source:c:\users\hajjaji\documents\github\cryptolocker\menu.c
 	"menu.h"
 	<stdio.h>
 	<stdlib.h>
 
-1594324211 source:c:\users\hajjaji\documents\github\cryptolocker\cryptchaine.c
+1594391889 source:c:\users\hajjaji\documents\github\cryptolocker\cryptchaine.c
 	"menu.h"
 	<string.h>
 	<stdio.h>
