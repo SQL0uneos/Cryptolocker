@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "files.c"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -69,12 +70,19 @@ void CryptageF()
 {
     int menu = 1;
     int choix;
+    char *filename;
+    filename = malloc(sizeof(char*) * 20);
+    printf("fichier:");
+    scanf("%s", &filename);
+    readFile(filename);
+
+        printf("Cryptage de fichier... \n");
 
     while(menu == 1)
     {
         printf("Cryptage de fichier... \n");
         printf("Quel algorithme voulez-vous utiliser ? \n");
-        printf("1 - Cryptage HTTPS\n2 - Cryptage XOR\n3 - Cryptage CESAR\n4 - precedent\n");
+        printf("1 - Cryptage inversement\n2 - Cryptage vegner\n3 - Cryptage CESAR\n4 - precedent\n");
 
         scanf("%d", &choix);
         if(choix == 1)
@@ -110,15 +118,19 @@ void CryptageC()
 
         printf("Crypter une  chaine... \n");
         printf("Quel algorithme voulez-vous utiliser ? \n");
-        printf("1 - Cryptage simple inversion\n2 - Cryptage CESAR\n3 - Cryptage DECALAGE \n");
+        printf("1 - Cryptage simple inversion\n2 - Cryptage ROT13\n3 - Cryptage de vignère \n");
 
         scanf("%d", &choix);
         if(choix == 1)
         {
             printf("Cryptage par inversion de chaine, veuiller entrer une chaine : \n");
+            printf("Entrer une chaine de caractere a inverser : \n");
 
+            char chaine[100];
 
-            cryptageChaineInv();
+            scanf("%s", &chaine);
+
+            cryptageChaineInv(chaine);
 
         }
         else if (choix == 2)

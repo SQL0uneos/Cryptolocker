@@ -43,7 +43,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1594378054 source:c:\users\pc-chambre\documents\github\cryptolocker\cryptchaine.c
+1594584643 source:c:\users\pc-chambre\documents\github\cryptolocker\cryptchaine.c
 	"menu.h"
 	<string.h>
 	<stdio.h>
@@ -56,8 +56,13 @@
 	<stdlib.h>
 	"menu.h"
 
-1594379277 source:c:\users\pc-chambre\documents\github\cryptolocker\menu.c
+1594584554 source:c:\users\pc-chambre\documents\github\cryptolocker\menu.c
 	"menu.h"
+	"files.c"
+	<stdio.h>
+	<stdlib.h>
+
+1594584226 c:\users\pc-chambre\documents\github\cryptolocker\files.c
 	<stdio.h>
 	<stdlib.h>
 
