@@ -20,6 +20,7 @@ char *cryptageChaineInv(char *chaine)
 void cryptageCesar(char str[], int shift)
 {
 
+  int k = 0;
   int i =0;
   int j=shift;
 
@@ -46,7 +47,7 @@ if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
 
     else if (shift < 0)
     {
-        for(int k = shift; k < 0; k++)
+        for(k = shift; k < 0; k++)
         {
             str[i]--;
             if(str[i] == 'a' - 1)

@@ -6,20 +6,20 @@
 
 1592851720 c:\users\lamma\documents\cryptolocker\cryptolocker\menu.h
 
-1592851720 source:c:\users\lamma\documents\github\cryptolocker\main.c
+1595095508 source:c:\users\lamma\documents\github\cryptolocker\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menu.h"
 
 1592851720 c:\users\lamma\documents\github\cryptolocker\menu.h
 
-1594322267 source:c:\users\lamma\documents\github\cryptolocker\menu.c
+1595111554 source:c:\users\lamma\documents\github\cryptolocker\menu.c
 	"menu.h"
+	"files.c"
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
 
-1594322298 source:c:\users\lamma\documents\github\cryptolocker\cryptchaine.c
+1595095758 source:c:\users\lamma\documents\github\cryptolocker\cryptchaine.c
 	"menu.h"
 	<string.h>
 	<stdio.h>
@@ -93,6 +93,17 @@
 1594898377 c:\users\ilyes\documents\github\cryptolocker\menu.c
 	"menu.h"
 	"files.c"
+	<stdio.h>
+	<stdlib.h>
+
+1595095508 c:\users\lamma\documents\github\cryptolocker\files.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1595111554 source:c:\users\lamma\documents\github\cryptolocker\decryptchaine.c
+	"menu.h"
+	<string.h>
 	<stdio.h>
 	<stdlib.h>
 

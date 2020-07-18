@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+
 void CryptageFF();
 void CryptageC();
 void viderBuffer();
@@ -47,10 +49,7 @@ void ChoixMenu()
         CryptageC();
         break;
     case 3:
-        printf("Decryptage de fichier... \n");
-        printf("Quel algorithme voulez-vous utiliser ? \n");
-        printf("1 - Decryptage HTTPS\n2 - Decryptage XOR\n3 - Decryptage CESAR \n");
-        break;
+        DecryptageC();
     case 4:
         printf("Decryptage de chaine de caractère... \n");
         printf("Quel algorithme voulez-vous utiliser ? \n");
@@ -180,29 +179,30 @@ void CryptageFF()
     printf("fichier: ");
     scanf("%s", filename);
     //*chaine_inverse = malloc(BUF_SIZE);
-    chaine_inverse = cryptageChaineInv(readFile(filename));
-    printf("Chaine inverse : %s\n", chaine_inverse);
-//    puts("Crypter une  chaine...");
-//    puts("Quel algorithme voulez-vous utiliser ?");
-//    puts("1. Cryptage simple inversion");
-//    puts("2. Cryptage ROT13");
-//    puts("3. Cryptage de vignère");
-//    choix = DemanderMenu(1, 3);
-//    switch(choix)
-//    {
-//        case 1:
-//            chaine_inverse = cryptageChaineInv(chaine);
-//            printf("Chaine inverse : %s\n", chaine_inverse);
-//            break;
-//        case 2:
-//            puts("Veuiller  entrer le decalage souhaite: ");
-//            scanf("%d", &numcesar);
-//            cryptageCesar(chaine, numcesar);
-//            break;
-//        case 3:
-//            vigenere();
-//            break;
-//    }
+    //chaine_inverse = cryptageChaineInv(readFile(filename));
+    //printf("Chaine inverse : %s\n", chaine_inverse);
+    puts("Crypter une  chaine...");
+    puts("Quel algorithme voulez-vous utiliser ?");
+    puts("1. Cryptage simple inversion");
+    puts("2. Cryptage ROT13");
+    puts("3. Cryptage de vignère");
+    choix = DemanderMenu(1, 3);
+    switch(choix)
+    {
+        case 1:
+            chaine_inverse = cryptageChaineInv(readFile(filename));
+            printf("Chaine inverse : %s\n", chaine_inverse);
+            break;
+        case 2:
+            puts("Veuiller  entrer le decalage souhaite: ");
+            scanf("%d", &numcesar);
+            chaine_inverse = cryptageCesar(readFile(filename), numcesar);
+            printf("Chaine inverse : %s\n", chaine_inverse);
+            break;
+        case 3:
+            vigenere(readFile(filename));
+            break;
+    }
 }
 
 /*void CryptageC()
@@ -317,3 +317,49 @@ void CryptageC()
     printf("%s",&file);
     writeFile(&file,str);
 }
+
+void DecryptageC()
+{
+
+    int choix;
+    char str[BUF_SIZE];
+    int numcesar;
+    char *chaine = malloc(BUF_SIZE);
+    char *chaine_inverse = malloc(BUF_SIZE);
+    puts("Decrypter une  chaine...");
+    puts("Quel algorithme voulez-vous utiliser ?");
+    puts("1. Decrypter une simple chaine inverser");
+    puts("2. Decryptage ROT13");
+    puts("3. Decryptage de vignère");
+    choix = DemanderMenu(1, 3);
+
+    switch(choix)
+    {
+        case 1:
+            printf("Decrypter une chaine a l'aide de notre algorithme : \n");
+
+            viderBuffer();
+            fgets(str, BUF_SIZE, stdin);
+            chaine_inverse = DecryptageChaineInv(str);
+            printf("test");
+            printf("Chaine inverse : %s\n", chaine_inverse);
+            break;
+        case 2:
+            puts("Veuiller  entrer le decalage souhaite: ");
+            scanf("%d", &numcesar);
+            puts("Veuiller inserer une chaine a decrypter en cesar: ");
+            getchar();
+            fgets(str, BUF_SIZE, stdin);
+            DecryptageCesar(str, numcesar);
+            break;
+        case 3:
+            //puts("Veuiller inserer une chaine a Decrypter en vegenere: ");
+            //getchar();
+            //fgets(str, BUF_SIZE, stdin);
+            //DecryptageVigenere(str);
+            decrypttestVig();
+            break;
+    }
+
+}
+
