@@ -43,7 +43,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1594584643 source:c:\users\pc-chambre\documents\github\cryptolocker\cryptchaine.c
+1595108454 source:c:\users\pc-chambre\documents\github\cryptolocker\cryptchaine.c
 	"menu.h"
 	<string.h>
 	<stdio.h>
@@ -51,20 +51,21 @@
 
 1594378054 c:\users\pc-chambre\documents\github\cryptolocker\menu.h
 
-1594378054 source:c:\users\pc-chambre\documents\github\cryptolocker\main.c
+1595108377 source:c:\users\pc-chambre\documents\github\cryptolocker\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menu.h"
 
-1594584554 source:c:\users\pc-chambre\documents\github\cryptolocker\menu.c
+1595111627 source:c:\users\pc-chambre\documents\github\cryptolocker\menu.c
 	"menu.h"
 	"files.c"
 	<stdio.h>
 	<stdlib.h>
 
-1594584226 c:\users\pc-chambre\documents\github\cryptolocker\files.c
+1595108377 c:\users\pc-chambre\documents\github\cryptolocker\files.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
 1595085488 source:c:\users\ilyes\documents\github\cryptolocker\cryptchaine.c
 	"menu.h"
@@ -102,6 +103,12 @@
 	<string.h>
 
 1595112289 source:c:\users\lamma\documents\github\cryptolocker\decryptchaine.c
+	"menu.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1595111947 source:c:\users\pc-chambre\documents\github\cryptolocker\decryptchaine.c
 	"menu.h"
 	<string.h>
 	<stdio.h>

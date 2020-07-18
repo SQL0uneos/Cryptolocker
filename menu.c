@@ -190,16 +190,16 @@ void CryptageFF()
         case 1:
             chaine_inverse = cryptageChaineInv(readFile(filename));
             printf("Chaine inverse : %s\n", chaine_inverse);
-            break;
+            princ();
         case 2:
             puts("Veuiller  entrer le decalage souhaite: ");
             scanf("%d", &numcesar);
             chaine_inverse = cryptageCesar(readFile(filename), numcesar);
             printf("Chaine inverse : %s\n", chaine_inverse);
-            break;
+            princ();
         case 3:
             vigenere(readFile(filename));
-            break;
+            princ();
     }
 }
 
