@@ -16,8 +16,8 @@ void AfficherMenu ()
     puts("<=================================================>");
     puts("1. Crypter un fichier");
     puts("2. Crypter une chaine de caractere");
-    puts("3. Decrypter un fichier");
-    puts("4. Decrypter une chaine de caractere");
+    puts("3. Decrypter une chaine de caractere");
+    puts("4. Decrypter un fichier");
     puts("5. Quitter");
     puts("<==================================================>");
 }
@@ -51,9 +51,7 @@ void ChoixMenu()
     case 3:
         DecryptageC();
     case 4:
-        printf("Decryptage de chaine de caractère... \n");
-        printf("Quel algorithme voulez-vous utiliser ? \n");
-        printf("1 - Decryptage BIT\n2 - Decryptage XOR\n3 - Decryptage DECALAGE \n");
+        decryptageF();
         break;
     case 5:
         puts("Merci a bientot");
@@ -358,6 +356,43 @@ void DecryptageC()
             //fgets(str, BUF_SIZE, stdin);
             //DecryptageVigenere(str);
             decrypttestVig();
+            break;
+    }
+
+}
+
+
+void decryptageF()
+{
+    int choix;
+    int numcesar;
+    char *filename, *chaine, *chaine_inverse;
+    filename = malloc(sizeof(char) * 20);
+    printf("fichier: ");
+    scanf("%s", filename);
+    //*chaine_inverse = malloc(BUF_SIZE);
+    //chaine_inverse = cryptageChaineInv(readFile(filename));
+    //printf("Chaine inverse : %s\n", chaine_inverse);
+    puts("Crypter une  chaine...");
+    puts("Quel algorithme voulez-vous utiliser ?");
+    puts("1. Decrypter un fichier en simple inversion");
+    puts("2. Decrypter un fichier en rot13");
+    puts("3. Decrypter un fichier en vignere");
+    choix = DemanderMenu(1, 3);
+    switch(choix)
+    {
+        case 1:
+            chaine_inverse = DecryptageChaineInv(readFile(filename));
+            printf("Chaine inverse : %s\n", chaine_inverse);
+            break;
+        case 2:
+            puts("Veuiller  entrer le decalage souhaite: ");
+            scanf("%d", &numcesar);
+            chaine_inverse = DecryptageCesar(readFile(filename), numcesar);
+            printf("Chaine inverse : %s\n", chaine_inverse);
+            break;
+        case 3:
+            decrypttestVig(readFile(filename));
             break;
     }
 

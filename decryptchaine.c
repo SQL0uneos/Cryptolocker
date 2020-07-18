@@ -81,15 +81,15 @@ printf("la chaine est: %s \n",str);
 
 
 
-void decrypttestVig()
+void decrypttestVig(char Message[30])
 {
-char Message[100];
+//char Message[100];
 char Cle [100];
 char Filtre [100] = "" ;
 char MsgCode[100] = "" ;
 char Tableau[TS] [TS] = {'a','b','c','d','e','f','g','h', 'i','j','k','l','m','n','o','p', 'q','r','s','t','u','v','w','x', 'y','z',' ','A','B','C','D','E', 'F','G','H','I','J','K','L','M', 'N','O','P','Q','R','S','T','U', 'V','W','X','Y','Z','0','1','2', '3','4','5','6','7','8','9','0', ',',';',':','!','?','.','/','*', '$','(',')','[',']','{','}','_', '-','°','@','%','<','>','\'','é', 'è','"','à','+','='} ;
-unsigned int i, j, k ;
-unsigned int select ;
+unsigned int i, j, k;
+unsigned int select;
 
 // On remplit le tableau
 for( i = 1 ; i < TS ; i ++ )
@@ -116,9 +116,9 @@ scanf( "%d", &select ) ;
 
 if( select )
 {
-printf( "Entrez un message : " ) ;
+//printf( "Entrez un message : " ) ;
 
-fflush(stdin);
+//fflush(stdin);
 
 if(select == MODE_CRYPT)
 gets(Message) ;
