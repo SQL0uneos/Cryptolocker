@@ -6,19 +6,15 @@
 
 // Fonction cryptage de chaine
 
-void cryptageChaineInv()
+char *cryptageChaineInv(char *chaine)
 {
 
-    // print et reverse via strrev
-    printf("Entrer une chaine de caractere a inverser : \n");
+    // print et reverse via
 
-    char chaine[100];
+    char *inverse;
+    inverse = strrev(chaine);
 
-    scanf("%s", &chaine);
-    strrev(chaine);
-
-
-    printf("Chaine inverse :  %s\n", chaine);
+    return inverse;
 }
 
 void cryptageCesar(char str[], int shift)
@@ -69,7 +65,7 @@ if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
 
     }
 
-printf("la chaine est:%s",str);
+printf("la chaine est: %s \n",str);
 
 
 
@@ -77,13 +73,9 @@ printf("la chaine est:%s",str);
 
 
 
-void vigenere(){
+void vigenere(char msg[30]){
 
-    char msg[30];
     char key[30];
-    printf("veuillez rentrer votre message!: \n");
-    getchar();
-    fgets(msg,sizeof(msg),stdin);
     printf("veuillez saisir votre cle!: \n");
     scanf("%s",key);
 
@@ -118,10 +110,6 @@ void vigenere(){
     printf("\n Generation de la nouvelle cle: %s", newKey);
     printf("\n Message crypté: %s", encryptedMsg);
     printf("\n Decrypte le message: %s\n", decryptedMsg);
-
-
-
-
 }
 
 

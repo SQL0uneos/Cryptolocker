@@ -1,12 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define BUF_SIZE 30
+#define BUF_SIZE 256
+
+void viderBuffer(void)
+{
+	int c;
+	while ((c = getchar()) != '\n' && c != EOF) { }
+}
 
 typedef char Chaine[32];
 
 FILE *openFile(char *filename) {
-    FILE* fp = fopen(&filename, "r");
+    FILE* fp = fopen(filename, "r");
     if (fp == NULL) {
         printf("Erreur : impossible d'ouvrir le fichier #1\n");
         return NULL;
@@ -15,30 +22,29 @@ FILE *openFile(char *filename) {
 }
 
 
-void readFile(const char *filename) {
+char *readFile(char *filename) {
     char buf[BUF_SIZE];
+    char string[BUF_SIZE];
     FILE *fp = openFile(filename);
-
     printf("[AFFICHAGE DU FICHIER] : \n");
     while (fgets(buf, BUF_SIZE, fp)) {
-        printf(buf);
+        strcat(string, buf);
     }
-
     fclose(fp);
+    printf(string);
+    return string;
 }
 
-void writeFile(const char *filename) {
-    FILE *fp = openFile(filename);
+void writeFile(char *filename,char *chaine) {
+    FILE* fp = fopen(filename, "a");
+    if (fp == NULL) {
+        printf("Erreur : impossible d'ouvrir le fichier #1\n");
+        return NULL;
+    }
+    int i;
 
-    Chaine str;
-    int i, n;
-    printf("\nCombien de ligne voulez-vous ajouter ?\n");
-    scanf("%d", &n);
-
-    printf("Que voulez-vous ajouter ?\n");
-    for(i=0; i<n; i++) {
-        scanf("%s", str);
-        fprintf(fp, "%s\n", str);
+    for(i=0; i<strlen(chaine); i++) {
+        fprintf(fp, "%s", &chaine[i]);
     }
 
     fclose(fp);

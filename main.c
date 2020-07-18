@@ -4,6 +4,8 @@
 
 int main()
 {
-    principal();
+    puts("<====Bienvenue sur le programme Cryptolocker 1====>");
+    princ();
+    //principal();
     return 0;
 }
