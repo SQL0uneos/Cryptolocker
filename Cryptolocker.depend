@@ -67,7 +67,7 @@
 	<stdlib.h>
 	<string.h>
 
-1595199072 source:c:\users\ilyes\documents\github\cryptolocker\cryptchaine.c
+1595201378 source:c:\users\ilyes\documents\github\cryptolocker\cryptchaine.c
 	"menu.h"
 	<string.h>
 	<stdio.h>
@@ -80,7 +80,7 @@
 	<stdlib.h>
 	"menu.h"
 
-1595198495 source:c:\users\ilyes\documents\github\cryptolocker\menu.c
+1595201343 source:c:\users\ilyes\documents\github\cryptolocker\menu.c
 	"menu.h"
 	"files.c"
 	<stdio.h>

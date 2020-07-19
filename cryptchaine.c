@@ -12,15 +12,11 @@ char *cryptageChaineInv(char *chaine)
     // print et reverse via
 
     char *inverse;
-    puts("ok1");
-    printf("\n----------------\n%s\n------------------\n",chaine);
     inverse = strrev(chaine);
-
-    puts("ok2");
     return inverse;
 }
 
-void cryptageCesar(char str[], int shift)
+char cryptageCesar(char *str, int shift)
 {
 
   int k = 0;
@@ -72,7 +68,7 @@ void cryptageCesar(char str[], int shift)
 printf("la chaine est: %s \n",str);
 
 
-
+return str;
 }
 
 

@@ -14,16 +14,17 @@ void AfficherMenu ()
     puts("<=================================================>");
     puts("<=======================MENU======================>");
     puts("<=================================================>");
-    puts("1. Crypter un fichier");
-    puts("2. Crypter une chaine de caractere");
-    puts("3. Decrypter une chaine de caractere");
-    puts("4. Decrypter un fichier");
-    puts("5. Quitter");
-    puts("<==================================================>");
+    puts("<==============1. Crypter un fichier==============>");
+    puts("<========2. Crypter une chaine de caractere=======>");
+    puts("<=======3. Decrypter une chaine de caractere======>");
+    puts("<============4. Decrypter un fichier==============>");
+    puts("<===================5. Quitter====================>");
+    puts("<=================================================>");
 }
 
 int DemanderMenu(int min, int max)
 {
+    printf("Choix : ");
     int choix;
     while (1)
     {
@@ -180,33 +181,49 @@ void CryptageFF()
     //*chaine_inverse = malloc(BUF_SIZE);
     //chaine_inverse = cryptageChaineInv(readFile(filename));
     //printf("Chaine inverse : %s\n", chaine_inverse);
-    puts("Crypter une  chaine...");
-    puts("Quel algorithme voulez-vous utiliser ?");
-    puts("1. Cryptage simple inversion");
-    puts("2. Cryptage ROT13");
-    puts("3. Cryptage de vignère");
-    choix = DemanderMenu(1, 3);
+    puts("<=================================================>");
+    puts("<=======================MENU======================>");
+    puts("<=================================================>");
+    puts("<===============Crypter un fichier================>");
+    puts("<=====Quel algorithme voulez-vous utiliser ?======>");
+    puts("<==========1. Cryptage simple inversion===========>");
+    puts("<================2. Cryptage ROT13================>");
+    puts("<=============3. Cryptage de vignere==============>");
+    puts("<================4. Retour au menu================>");
+    puts("<=================================================>");
+    choix = DemanderMenu(1, 4);
+    char *file, str;
     switch(choix)
     {
         case 1:
             chaine_inverse = cryptageChaineInv(readFile(filename));
             printf("Chaine inverse : %s\n", chaine_inverse);
-            char *file;
             puts("fichier de sauvegarde: ");
             scanf("%s", &file);
             printf("%s",&file);
             writeFile(&file, chaine_inverse);
             viderBuffer();
-            princ();
+            break;
         case 2:
             puts("Veuiller  entrer le decalage souhaite: ");
             scanf("%d", &numcesar);
             chaine_inverse = cryptageCesar(readFile(filename), numcesar);
             printf("Chaine inverse : %s\n", chaine_inverse);
-            princ();
+            puts("fichier de sauvegarde: ");
+            scanf("%s", &file);
+            printf("%s",&file);
+            writeFile(&file,str);
+            break;
         case 3:
             vigenere(readFile(filename));
+            puts("fichier de sauvegarde: ");
+            scanf("%s", &file);
+            printf("%s",&file);
+            writeFile(&file,str);
+            break;
+        case 4:
             princ();
+            break;
     }
     princ();
 }
@@ -285,17 +302,22 @@ void CryptageC()
     int numcesar;
     char *chaine = malloc(BUF_SIZE);
     char *chaine_inverse = malloc(BUF_SIZE);
-    puts("Crypter une  chaine...");
-    puts("Quel algorithme voulez-vous utiliser ?");
-    puts("1. Cryptage simple inversion");
-    puts("2. Cryptage ROT13");
-    puts("3. Cryptage de vignère");
-    choix = DemanderMenu(1, 3);
+    puts("<=================================================>");
+    puts("<=======================MENU======================>");
+    puts("<=================================================>");
+    puts("<=========Crypter une chaine de caractere=========>");
+    puts("<=====Quel algorithme voulez-vous utiliser ?======>");
+    puts("<===========1. Cryptage simple inversion==========>");
+    puts("<================2. Cryptage ROT13================>");
+    puts("<==============3. Cryptage de vignère=============>");
+    puts("<================4. Retour au menu================>");
+    puts("<=================================================>");
+    choix = DemanderMenu(1, 4);
     switch(choix)
     {
         case 1:
             printf("Cryptage par inversion de chaine, veuiller entrer une chaine : \n");
-            printf("Entrer une chaine de caractere a inverser : \n");
+            printf("Entrer une chaine de caractere a inverser : ");
 
             viderBuffer();
             fgets(str, BUF_SIZE, stdin);
@@ -305,16 +327,19 @@ void CryptageC()
         case 2:
             puts("Veuiller  entrer le decalage souhaite: ");
             scanf("%d", &numcesar);
-            puts("Veuiller inserer une chaine a crypter en cesar: ");
+            printf("Veuiller inserer une chaine a crypter en cesar: ");
             getchar();
             fgets(str, BUF_SIZE, stdin);
             cryptageCesar(str, numcesar);
             break;
         case 3:
-            puts("Veuiller inserer une chaine a crypter en vegenere: ");
+            printf("Veuiller inserer une chaine a crypter en vegenere: ");
             getchar();
             fgets(str, BUF_SIZE, stdin);
             vigenere(str);
+            break;
+        case 4:
+            princ();
             break;
     }
     char *file;
@@ -333,12 +358,17 @@ void DecryptageC()
     int numcesar;
     char *chaine = malloc(BUF_SIZE);
     char *chaine_inverse = malloc(BUF_SIZE);
-    puts("Decrypter une  chaine...");
-    puts("Quel algorithme voulez-vous utiliser ?");
-    puts("1. Decrypter une simple chaine inverser");
-    puts("2. Decryptage ROT13");
-    puts("3. Decryptage de vignère");
-    choix = DemanderMenu(1, 3);
+    puts("<=================================================>");
+    puts("<=======================MENU======================>");
+    puts("<=================================================>");
+    puts("<========Decrypter une chaine de caractere========>");
+    puts("<======Quel algorithme voulez-vous utiliser ?=====>");
+    puts("<=====1. Decrypter une simple chaine inverser=====>");
+    puts("<===============2. Decryptage ROT13===============>");
+    puts("<============3. Decryptage de vignère=============>");
+    puts("<================4. Retour au menu================>");
+    puts("<=================================================>");
+    choix = DemanderMenu(1, 4);
 
     switch(choix)
     {
@@ -366,8 +396,16 @@ void DecryptageC()
             //DecryptageVigenere(str);
             decrypttestVig();
             break;
+        case 4:
+            princ();
+            break;
     }
-princ();
+    char *file;
+    puts("fichier de sauvegarde: ");
+    scanf("%s", &file);
+    printf("%s",&file);
+    writeFile(&file,str);
+    princ();
 }
 
 
@@ -375,19 +413,23 @@ void decryptageF()
 {
     int choix;
     int numcesar;
-    char *filename, *chaine, *chaine_inverse;
+    char *filename, *chaine, *chaine_inverse, str;
     filename = malloc(sizeof(char) * 20);
     printf("fichier: ");
     scanf("%s", filename);
     //*chaine_inverse = malloc(BUF_SIZE);
     //chaine_inverse = cryptageChaineInv(readFile(filename));
     //printf("Chaine inverse : %s\n", chaine_inverse);
-    puts("Crypter une  chaine...");
-    puts("Quel algorithme voulez-vous utiliser ?");
-    puts("1. Decrypter un fichier en simple inversion");
-    puts("2. Decrypter un fichier en rot13");
-    puts("3. Decrypter un fichier en vignere");
-    puts("4. Retour au menu");
+    puts("<=================================================>");
+    puts("<=======================MENU======================>");
+    puts("<=================================================>");
+    puts("<==============Decrypter un fichier===============>");
+    puts("<=====Quel algorithme voulez-vous utiliser ?======>");
+    puts("<===1. Decrypter un fichier en simple inversion===>");
+    puts("<=========2. Decrypter un fichier en rot13========>");
+    puts("<========3. Decrypter un fichier en vignere=======>");
+    puts("<================4. Retour au menu================>");
+    puts("<=================================================>");
     choix = DemanderMenu(1, 4);
     switch(choix)
     {
@@ -408,6 +450,11 @@ void decryptageF()
             princ();
             break;
     }
-princ();
+    char *file;
+    puts("fichier de sauvegarde: ");
+    scanf("%s", &file);
+    printf("%s",&file);
+    writeFile(&file,str);
+    princ();
 }
 
