@@ -23,16 +23,11 @@ FILE *openFile(char *filename) {
 
 
 char *readFile(char *filename) {
-    char buf[BUF_SIZE];
-    char string[BUF_SIZE];
+    char *buf = malloc(sizeof(char)*BUF_SIZE);
     FILE *fp = openFile(filename);
-    printf("[AFFICHAGE DU FICHIER] : \n");
-    while (fgets(buf, BUF_SIZE, fp)) {
-        strcat(string, buf);
-    }
+    fgets(buf, BUF_SIZE, fp);
     fclose(fp);
-    printf(string);
-    return string;
+    return buf;
 }
 
 void writeFile(char *filename,char *chaine) {

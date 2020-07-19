@@ -189,7 +189,6 @@ void CryptageFF()
     switch(choix)
     {
         case 1:
-            viderBuffer();
             chaine_inverse = cryptageChaineInv(readFile(filename));
             printf("Chaine inverse : %s\n", chaine_inverse);
             char *file;
@@ -197,6 +196,7 @@ void CryptageFF()
             scanf("%s", &file);
             printf("%s",&file);
             writeFile(&file, chaine_inverse);
+            viderBuffer();
             princ();
         case 2:
             puts("Veuiller  entrer le decalage souhaite: ");
@@ -208,6 +208,7 @@ void CryptageFF()
             vigenere(readFile(filename));
             princ();
     }
+    princ();
 }
 
 /*void CryptageC()
@@ -321,6 +322,7 @@ void CryptageC()
     scanf("%s", &file);
     printf("%s",&file);
     writeFile(&file,str);
+    princ();
 }
 
 void DecryptageC()
@@ -365,7 +367,7 @@ void DecryptageC()
             decrypttestVig();
             break;
     }
-
+princ();
 }
 
 
@@ -385,7 +387,8 @@ void decryptageF()
     puts("1. Decrypter un fichier en simple inversion");
     puts("2. Decrypter un fichier en rot13");
     puts("3. Decrypter un fichier en vignere");
-    choix = DemanderMenu(1, 3);
+    puts("4. Retour au menu");
+    choix = DemanderMenu(1, 4);
     switch(choix)
     {
         case 1:
@@ -401,7 +404,10 @@ void decryptageF()
         case 3:
             decrypttestVig(readFile(filename));
             break;
+        case 4:
+            princ();
+            break;
     }
-
+princ();
 }
 

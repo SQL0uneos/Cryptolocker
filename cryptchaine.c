@@ -12,8 +12,11 @@ char *cryptageChaineInv(char *chaine)
     // print et reverse via
 
     char *inverse;
+    puts("ok1");
+    printf("\n----------------\n%s\n------------------\n",chaine);
     inverse = strrev(chaine);
 
+    puts("ok2");
     return inverse;
 }
 
@@ -26,39 +29,39 @@ void cryptageCesar(char str[], int shift)
 
   for(i;i<strlen(str);i++)
     {
-if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
-    {
-
-    if(shift > 0)
-    {
-        for(j = 0; j < shift; j++)
+    if(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
         {
-            str[i]++;
-            if(str[i] == 'z' + 1)
+
+        if(shift > 0)
+        {
+            for(j = 0; j < shift; j++)
             {
-                str[i] = 'a';
-            }
-            if(str[i] == 'Z' +1)
-            {
-                str[i] = 'A';
+                str[i]++;
+                if(str[i] == 'z' + 1)
+                {
+                    str[i] = 'a';
+                }
+                if(str[i] == 'Z' +1)
+                {
+                    str[i] = 'A';
+                }
             }
         }
-    }
 
-    else if (shift < 0)
-    {
-        for(k = shift; k < 0; k++)
+        else if (shift < 0)
         {
-            str[i]--;
-            if(str[i] == 'a' - 1)
+            for(k = shift; k < 0; k++)
             {
-                str[i] = 'z';
+                str[i]--;
+                if(str[i] == 'a' - 1)
+                {
+                    str[i] = 'z';
+                }
+                if(str[i] == 'A' - 1)
+                {
+                    str[i] = 'Z';
+                }
             }
-            if(str[i] == 'A' - 1)
-            {
-                str[i] = 'Z';
-            }
-        }
     }
 
   }
