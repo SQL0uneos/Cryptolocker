@@ -172,7 +172,8 @@ void CryptageFF()
 {
     int choix;
     int numcesar;
-    char *filename, *chaine, *chaine_inverse;
+    char *filename, *chaine;
+    char *chaine_inverse = malloc(BUF_SIZE);
     filename = malloc(sizeof(char) * 20);
     printf("fichier: ");
     scanf("%s", filename);
@@ -188,8 +189,14 @@ void CryptageFF()
     switch(choix)
     {
         case 1:
+            viderBuffer();
             chaine_inverse = cryptageChaineInv(readFile(filename));
             printf("Chaine inverse : %s\n", chaine_inverse);
+            char *file;
+            puts("fichier de sauvegarde: ");
+            scanf("%s", &file);
+            printf("%s",&file);
+            writeFile(&file, chaine_inverse);
             princ();
         case 2:
             puts("Veuiller  entrer le decalage souhaite: ");

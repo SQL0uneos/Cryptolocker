@@ -25,9 +25,10 @@ void DecryptageCesar(char str[], int shift)
   int k = 0;
   int i =0;
   int d = 0;
+  int nombre_test = 0;
   int j=shift;
 
-  for ( int nombre_test = 1 ; nombre_test < shift ; nombre_test++ )
+  for (nombre_test = 1 ; nombre_test < shift ; nombre_test++ )
   {
     for(i=0;i<strlen(str);i++)
     {

@@ -42,10 +42,11 @@ void writeFile(char *filename,char *chaine) {
         return NULL;
     }
     int i;
+    puts(chaine);
 
-    for(i=0; i<strlen(chaine); i++) {
-        fprintf(fp, "%s", &chaine[i]);
-    }
+
+    fprintf(fp, "%s", chaine);
+
 
     fclose(fp);
 }

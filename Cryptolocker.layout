@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="cryptchaine.c" open="1" top="0" tabpos="3">
-		<Cursor position="158" topLine="0" />
+	<File name="cryptchaine.c" open="1" top="0" tabpos="4">
+		<Cursor position="265" topLine="1" />
 	</File>
 	<File name="decryptchaine.c" open="1" top="0" tabpos="5">
-		<Cursor position="268" topLine="0" />
+		<Cursor position="689" topLine="15" />
 	</File>
-	<File name="files.c" open="1" top="0" tabpos="4">
-		<Cursor position="718" topLine="22" />
+	<File name="files.c" open="1" top="1" tabpos="3">
+		<Cursor position="704" topLine="22" />
 	</File>
 	<File name="main.c" open="1" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="menu.c" open="1" top="1" tabpos="2">
-		<Cursor position="8885" topLine="324" />
+	<File name="menu.c" open="1" top="0" tabpos="2">
+		<Cursor position="6746" topLine="280" />
 	</File>
 </CodeBlocks_layout_file>
